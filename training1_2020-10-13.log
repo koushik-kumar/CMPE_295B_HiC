@@ -5140,3 +5140,96 @@
 -------2695 Epoch: 1277 running_loss/i: 0.44420917783863845
 -----time:2020-10-13 17:02:02
 2020-10-13 17:02:02,448 Training progress: 0.3648571428571429 || Epoch: 1277, Total Epoch: 3500 || Training Time Elapse: 75815.43631267548
+2020-10-13 17:03:01,090 TRAINING INFO: 
+-------2695 Epoch: 1278 running_loss/i: 0.4441914852401017
+-----time:2020-10-13 17:03:01
+2020-10-13 17:03:01,091 Training progress: 0.36514285714285716 || Epoch: 1278, Total Epoch: 3500 || Training Time Elapse: 75874.07866597176
+2020-10-13 17:03:59,712 TRAINING INFO: 
+-------2695 Epoch: 1279 running_loss/i: 0.4441738494881818
+-----time:2020-10-13 17:03:59
+2020-10-13 17:03:59,713 Training progress: 0.36542857142857144 || Epoch: 1279, Total Epoch: 3500 || Training Time Elapse: 75932.7008357048
+2020-10-13 17:04:58,383 TRAINING INFO: 
+-------2695 Epoch: 1280 running_loss/i: 0.4441565255242692
+-----time:2020-10-13 17:04:58
+2020-10-13 17:04:58,383 Training progress: 0.3657142857142857 || Epoch: 1280, Total Epoch: 3500 || Training Time Elapse: 75991.37137675285
+2020-10-13 17:05:57,005 TRAINING INFO: 
+-------2695 Epoch: 1281 running_loss/i: 0.444138913460513
+-----time:2020-10-13 17:05:57
+2020-10-13 17:05:57,005 Training progress: 0.366 || Epoch: 1281, Total Epoch: 3500 || Training Time Elapse: 76049.99320602417
+2020-10-13 17:06:55,645 TRAINING INFO: 
+-------2695 Epoch: 1282 running_loss/i: 0.4441213206728447
+-----time:2020-10-13 17:06:55
+2020-10-13 17:06:55,645 Training progress: 0.36628571428571427 || Epoch: 1282, Total Epoch: 3500 || Training Time Elapse: 76108.63334107399
+2020-10-13 17:07:54,287 TRAINING INFO: 
+-------2695 Epoch: 1283 running_loss/i: 0.444103769395338
+-----time:2020-10-13 17:07:54
+2020-10-13 17:07:54,288 Training progress: 0.36657142857142855 || Epoch: 1283, Total Epoch: 3500 || Training Time Elapse: 76167.27573037148
+2020-10-13 17:08:52,935 TRAINING INFO: 
+-------2695 Epoch: 1284 running_loss/i: 0.44408617001782813
+-----time:2020-10-13 17:08:52
+2020-10-13 17:08:52,935 Training progress: 0.3668571428571429 || Epoch: 1284, Total Epoch: 3500 || Training Time Elapse: 76225.92329454422
+2020-10-13 17:09:51,601 TRAINING INFO: 
+-------2695 Epoch: 1285 running_loss/i: 0.44406867608961914
+-----time:2020-10-13 17:09:51
+2020-10-13 17:09:51,601 Training progress: 0.36714285714285716 || Epoch: 1285, Total Epoch: 3500 || Training Time Elapse: 76284.58926057816
+2020-10-13 17:10:50,227 TRAINING INFO: 
+-------2695 Epoch: 1286 running_loss/i: 0.4440511961695211
+-----time:2020-10-13 17:10:50
+2020-10-13 17:10:50,227 Training progress: 0.36742857142857144 || Epoch: 1286, Total Epoch: 3500 || Training Time Elapse: 76343.21529507637
+2020-10-13 17:11:48,886 TRAINING INFO: 
+-------2695 Epoch: 1287 running_loss/i: 0.44403376524044624
+-----time:2020-10-13 17:11:48
+2020-10-13 17:11:48,886 Training progress: 0.3677142857142857 || Epoch: 1287, Total Epoch: 3500 || Training Time Elapse: 76401.87420487404
+2020-10-13 17:12:47,498 TRAINING INFO: 
+-------2695 Epoch: 1288 running_loss/i: 0.44401632017928566
+-----time:2020-10-13 17:12:47
+2020-10-13 17:12:47,499 Training progress: 0.368 || Epoch: 1288, Total Epoch: 3500 || Training Time Elapse: 76460.48666930199
+2020-10-13 17:13:46,157 TRAINING INFO: 
+-------2695 Epoch: 1289 running_loss/i: 0.4439988141376197
+-----time:2020-10-13 17:13:46
+2020-10-13 17:13:46,158 Training progress: 0.36828571428571427 || Epoch: 1289, Total Epoch: 3500 || Training Time Elapse: 76519.14561653137
+2020-10-13 17:14:44,769 TRAINING INFO: 
+-------2695 Epoch: 1290 running_loss/i: 0.4439813596083729
+-----time:2020-10-13 17:14:44
+2020-10-13 17:14:44,771 Training progress: 0.36857142857142855 || Epoch: 1290, Total Epoch: 3500 || Training Time Elapse: 76577.7587211132
+2020-10-13 17:15:43,430 TRAINING INFO: 
+-------2695 Epoch: 1291 running_loss/i: 0.4439640434630775
+-----time:2020-10-13 17:15:43
+2020-10-13 17:15:43,431 Training progress: 0.3688571428571429 || Epoch: 1291, Total Epoch: 3500 || Training Time Elapse: 76636.41861081123
+2020-10-13 17:16:42,062 TRAINING INFO: 
+-------2695 Epoch: 1292 running_loss/i: 0.4439466450823443
+-----time:2020-10-13 17:16:42
+2020-10-13 17:16:42,065 Training progress: 0.36914285714285716 || Epoch: 1292, Total Epoch: 3500 || Training Time Elapse: 76695.052765131
+2020-10-13 17:17:40,682 TRAINING INFO: 
+-------2695 Epoch: 1293 running_loss/i: 0.4439292769164628
+-----time:2020-10-13 17:17:40
+2020-10-13 17:17:40,683 Training progress: 0.36942857142857144 || Epoch: 1293, Total Epoch: 3500 || Training Time Elapse: 76753.67068910599
+2020-10-13 17:18:39,346 TRAINING INFO: 
+-------2695 Epoch: 1294 running_loss/i: 0.44391192377623556
+-----time:2020-10-13 17:18:39
+2020-10-13 17:18:39,346 Training progress: 0.3697142857142857 || Epoch: 1294, Total Epoch: 3500 || Training Time Elapse: 76812.33402442932
+2020-10-13 17:19:37,948 TRAINING INFO: 
+-------2695 Epoch: 1295 running_loss/i: 0.44389463810151675
+-----time:2020-10-13 17:19:37
+2020-10-13 17:19:37,949 Training progress: 0.37 || Epoch: 1295, Total Epoch: 3500 || Training Time Elapse: 76870.93657159805
+2020-10-13 17:20:36,574 TRAINING INFO: 
+-------2695 Epoch: 1296 running_loss/i: 0.44387743821383174
+-----time:2020-10-13 17:20:36
+2020-10-13 17:20:36,575 Training progress: 0.3702857142857143 || Epoch: 1296, Total Epoch: 3500 || Training Time Elapse: 76929.56273722649
+2020-10-13 17:21:35,171 TRAINING INFO: 
+-------2695 Epoch: 1297 running_loss/i: 0.4438601072376995
+-----time:2020-10-13 17:21:35
+2020-10-13 17:21:35,171 Training progress: 0.37057142857142855 || Epoch: 1297, Total Epoch: 3500 || Training Time Elapse: 76988.15925717354
+2020-10-13 17:22:33,819 TRAINING INFO: 
+-------2695 Epoch: 1298 running_loss/i: 0.44384276975557063
+-----time:2020-10-13 17:22:33
+2020-10-13 17:22:33,819 Training progress: 0.37085714285714283 || Epoch: 1298, Total Epoch: 3500 || Training Time Elapse: 77046.80723714828
+2020-10-13 17:23:32,454 TRAINING INFO: 
+-------2695 Epoch: 1299 running_loss/i: 0.4438255407418088
+-----time:2020-10-13 17:23:32
+2020-10-13 17:23:32,454 Training progress: 0.37114285714285716 || Epoch: 1299, Total Epoch: 3500 || Training Time Elapse: 77105.44205594063
+2020-10-13 17:24:31,064 TRAINING INFO: 
+-------2695 Epoch: 1300 running_loss/i: 0.4438082652794999
+-----time:2020-10-13 17:24:31
+2020-10-13 17:24:31,064 Training progress: 0.37142857142857144 || Epoch: 1300, Total Epoch: 3500 || Training Time Elapse: 77164.05200839043
+2020-10-13 17:24:31,064 epoch[1300]: Saving Model
