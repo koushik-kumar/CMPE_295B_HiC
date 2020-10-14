@@ -100,7 +100,7 @@ def train(lowres,highres, outModel):
         #for epoch in range(0, 3500):
     curDate = strftime("%Y-%m-%d",localtime())
     try:
-        os.mkdir('model'+curDate)
+        os.mkdir('model/'+curDate)
     except FileExistsError:
         pass
     trainTimer = time.time()
