@@ -1,4 +1,3 @@
-import logging
 import os,sys
 from torch.utils import data
 from hicplus import model
@@ -121,10 +120,10 @@ def main(args):
     inmodel = args.model
     hicfile = args.inputfile
     Mat = chr_pred(hicfile,chrN1,chrN2,binsize,inmodel).toarray()
-    #logging.debug(str(Mat.shape))
+    print(Mat.shape)
     np.save('chr%s.chr%s.pred.npy'%(chrN1,chrN2), Mat)
-    #print(enhM.shape)
+        #print(enhM.shape)
 if __name__ == '__main__':
     main()
 
-logging.debug(str(datetime.now() - startTime))
+print(datetime.now() - startTime)

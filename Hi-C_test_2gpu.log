@@ -1,0 +1,29 @@
+no change     /home/007402876/anaconda3/condabin/conda
+no change     /home/007402876/anaconda3/bin/conda
+no change     /home/007402876/anaconda3/bin/conda-env
+no change     /home/007402876/anaconda3/bin/activate
+no change     /home/007402876/anaconda3/bin/deactivate
+no change     /home/007402876/anaconda3/etc/profile.d/conda.sh
+no change     /home/007402876/anaconda3/etc/fish/conf.d/conda.fish
+no change     /home/007402876/anaconda3/shell/condabin/Conda.psm1
+no change     /home/007402876/anaconda3/shell/condabin/conda-hook.ps1
+no change     /home/007402876/anaconda3/lib/python3.7/site-packages/xontrib/conda.xsh
+no change     /home/007402876/anaconda3/etc/profile.d/conda.csh
+no change     /home/007402876/.bashrc
+No action taken.
+Starting Job
+Python 3.6.10 :: Anaconda, Inc.
+srun: error: Task launch for 26991.0 failed on node g15: Job credential expired
+srun: error: Application launch failed: Job credential expired
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 26991.0 ON g1 CANCELLED AT 2020-10-02T21:58:23 ***
+srun: error: g1: task 0: Killed
+srun: error: g14: task 4: Killed
+srun: error: g2: task 1: Killed
+srun: error: g5: task 2: Killed
+srun: error: g10: task 3: Killed
+srun: error: Timed out waiting for job step to complete
+job finished
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 26834.0 ON g11 CANCELLED AT 2020-10-02T22:41:12 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 26834 ON g11 CANCELLED AT 2020-10-02T22:41:12 DUE TO TIME LIMIT ***

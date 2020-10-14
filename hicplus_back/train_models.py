@@ -1,6 +1,4 @@
 from __future__ import print_function
-import logging
-#logging.basicConfig(filename='training.log', level=logging.DEBUG)
 import argparse as ap
 from math import log10
 
@@ -24,20 +22,20 @@ def main(args):
 
     highres = utils.matrix_extract(args.chromosome, 10000, args.inputfile)
 
-    logging.debug('dividing, filtering and downsampling files...')
+    print('dividing, filtering and downsampling files...')
 
     highres_sub, index = utils.divide(highres)
 
-    logging.debug(str(highres_sub.shape))
+    print(highres_sub.shape)
     #np.save(infile+"highres",highres_sub)
 
     lowres = utils.genDownsample(highres,1/float(args.scalerate))
     lowres_sub,index = utils.divide(lowres)
-    logging.debug(str(lowres_sub.shape))
+    print(lowres_sub.shape)
     #np.save(infile+"lowres",lowres_sub)
 
-    logging.debug('start training...')
+    print('start training...')
     trainConvNet.train(lowres_sub,highres_sub,args.outmodel)
 
 
-    logging.debug('finished...')
+    print('finished...')

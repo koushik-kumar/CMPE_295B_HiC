@@ -1,5 +1,4 @@
 import os,sys
-import logging
 from torch.utils import data
 from hicplus import model
 import torch
@@ -26,7 +25,7 @@ def pred_genome():
                 continue
             MatV = chrMatrix_pred(i,j)
             genomeV = hstack([genomeV, MatV]) if genomeV.size else MatV
-            logging.debug(str(i) +','+str(j))
+            print(i, j)
         chrh = vstack([genomeH, genomeV])
 
     return(genomeH)
@@ -34,7 +33,7 @@ def pred_genome():
 
 def main():
     Mat = pred_genome().toarray()
-    #logging.debug(str((Mat.shape))
+    print(Mat.shape)
     np.save('genome.pred.npy', Mat)
 
 if __name__ == '__main__':

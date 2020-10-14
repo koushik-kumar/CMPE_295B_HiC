@@ -1,6 +1,6 @@
 # Author: Yan Zhang
 # Email: zhangyan.cse (@) gmail.com
-import logging
+
 import sys
 import numpy as np
 #import matplotlib.pyplot as plt
@@ -12,8 +12,7 @@ from torch.utils import data
 import torch
 import torch.optim as optim
 from torch.autograd import Variable
-from time import gmtime, strftime, localtime
-import time
+from time import gmtime, strftime
 import sys
 import torch.nn as nn
 import argparse
@@ -73,7 +72,7 @@ def train(lowres,highres, outModel):
         Y.append(no_padding_sample)
     Y = np.array(Y).astype(np.float32)
 
-    logging.debug('low_resulution_sample.shape:'+str(low_resolution_samples.shape)+', Y.shape'+ str(Y.shape))
+    print(low_resolution_samples.shape, Y.shape)
 
     lowres_set = data.TensorDataset(torch.from_numpy(low_resolution_samples), torch.from_numpy(np.zeros(low_resolution_samples.shape[0])))
     lowres_loader = torch.utils.data.DataLoader(lowres_set, batch_size=batch_size, shuffle=False)
@@ -96,42 +95,35 @@ def train(lowres,highres, outModel):
     reg_loss = 0.0
 
     # write the log file to record the training process
-    # with open('HindIII_train.txt', 'w') as log:
-        #for epoch in range(0, 3500):
-    curDate = strftime("%Y-%m-%d",localtime())
-    try:
-        os.mkdir('model'+curDate)
-    except FileExistsError:
-        pass
-    trainTimer = time.time()
-    for epoch in range(0, 3500):
-        for i, (v1, v2) in enumerate(zip(lowres_loader, hires_loader)):
-            if (i == len(lowres_loader) - 1):
-                continue
-            _lowRes, _ = v1
-            _highRes, _ = v2
+    with open('HindIII_train.txt', 'w') as log:
+        for epoch in range(0, 3500):
+            for i, (v1, v2) in enumerate(zip(lowres_loader, hires_loader)):
+                if (i == len(lowres_loader) - 1):
+                    continue
+                _lowRes, _ = v1
+                _highRes, _ = v2
+                
+                _lowRes = Variable(_lowRes)
+                _highRes = Variable(_highRes).unsqueeze(1)
 
-            _lowRes = Variable(_lowRes)
-            _highRes = Variable(_highRes).unsqueeze(1)
-
-            if use_gpu:
-                _lowRes = _lowRes.cuda()
-                _highRes = _highRes.cuda()
-            optimizer.zero_grad()
-            y_prediction = Net(_lowRes)
-
-            loss = _loss(y_prediction, _highRes)
-            loss.backward()
-            optimizer.step()
-
-            running_loss += loss.item()
-
-        logging.info('TRAINING INFO: \n' + '-------' + str(i) +' Epoch: '+str(epoch)+ ' running_loss/i: '+str(running_loss / i)+'\n-----time:'+ str(strftime("%Y-%m-%d %H:%M:%S", localtime())))
-        logging.debug('Training progress: '+str(epoch/3500) + f' || Epoch: {epoch}, Total Epoch: 3500 || Training Time Elapse: {time.time() - trainTimer}')
+                if use_gpu:
+                    _lowRes = _lowRes.cuda()
+                    _highRes = _highRes.cuda()
+                optimizer.zero_grad()
+                y_prediction = Net(_lowRes)
+		
+                loss = _loss(y_prediction, _highRes)
+                loss.backward()
+                optimizer.step()
+		
+                running_loss += loss.item()
+        
+        print('-------', i, epoch, running_loss/i, strftime("%Y-%m-%d %H:%M:%S", gmtime()))
+	
+        log.write(str(epoch) + ', ' + str(running_loss/i,) +', '+ strftime("%Y-%m-%d %H:%M:%S", gmtime())+ '\n')
         running_loss = 0.0
         running_loss_validate = 0.0
 	# save the model every 100 epoches
         if (epoch % 100 == 0):
-            logging.debug(f'epoch[{epoch}]: Saving Model')
-            torch.save({'epoch':epoch , 'model_state_dict': Net.state_dict(), 'optimizer_state_dict': optimizer.state_dict(), 'loss': running_loss}, 'model/'+curDate+'/'+outModel + str(epoch) + str('.model'))
+            torch.save(Net.state_dict(), outModel + str(epoch) + str('.model'))
         pass
