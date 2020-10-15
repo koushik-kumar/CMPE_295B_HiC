@@ -29,7 +29,7 @@ conv2d3_filters_size = 5
 
 
 down_sample_ratio = 16
-epochs = 10
+epochs = 3500
 HiC_max_value = 100
 batch_size = 512
 
@@ -52,7 +52,7 @@ batch_size = 512
 #low_resolution_samples = np.load(gzip.GzipFile('/home/zhangyan/SRHiC_samples/IMR90_down_HINDIII16_chr1_8.npy.gz', "r")).astype(np.float32) * down_sample_ratio
 #high_resolution_samples = np.load(gzip.GzipFile('/home/zhangyan/SRHiC_samples/original10k/_IMR90_HindIII_original_chr1_8.npy.gz', "r")).astype(np.float32)
 
-def train(lowres,highres, outModel):
+def train(lowres,highres, outModel, checkpoint_file):
     low_resolution_samples = lowres.astype(np.float32) * down_sample_ratio
 
     high_resolution_samples = highres.astype(np.float32)
@@ -94,7 +94,7 @@ def train(lowres,highres, outModel):
     running_loss = 0.0
     running_loss_validate = 0.0
     reg_loss = 0.0
-
+    
     # write the log file to record the training process
     # with open('HindIII_train.txt', 'w') as log:
         #for epoch in range(0, 3500):
@@ -103,8 +103,17 @@ def train(lowres,highres, outModel):
         os.mkdir(os.getcwd()+'/model/'+curDate+'/')
     except FileExistsError:
         pass
+    start_epoch = 0
+    if checkpoint_file is not None: 
+        checkpoint = torch.load(checkpoint_file)
+        for i in checkpoint: print(i)
+        start_epoch = checkpoint['epoch']
+        running_loss = checkpoint['loss']
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        Net.load_state_dict(checkpoint['model_state_dict'])
+   # Net.train()
     trainTimer = time.time()
-    for epoch in range(0, 3500):
+    for epoch in range(start_epoch, epochs):
         for i, (v1, v2) in enumerate(zip(lowres_loader, hires_loader)):
             if (i == len(lowres_loader) - 1):
                 continue

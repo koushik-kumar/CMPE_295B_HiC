@@ -14,5 +14,5 @@ No action taken.
 Starting Job
 Python 3.6.10 :: Anaconda, Inc.
 srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
-slurmstepd: error: *** STEP 27602.0 ON g1 CANCELLED AT 2020-10-14T18:20:25 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 27602 ON g1 CANCELLED AT 2020-10-14T18:20:25 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 27902.0 ON g1 CANCELLED AT 2020-10-14T22:13:25 ***
+slurmstepd: error: *** JOB 27902 ON g1 CANCELLED AT 2020-10-14T22:13:25 ***

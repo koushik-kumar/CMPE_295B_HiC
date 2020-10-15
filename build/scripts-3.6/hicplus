@@ -1,3 +1,4 @@
+#!/home/007402876/anaconda3/envs/hicPlus_36/bin/python
 from time import gmtime, strftime
 
 import logging
@@ -39,6 +40,10 @@ def getargs():
         i.add_argument('-o', '--outmodel',
                          help = 'output model name. default = model_epochnumber.model',
                          type = str, default = 'model')
+        i.add_argument('-k', '--checkpoint',
+                        help = 'name of model file to load from checkpoint',
+                        type = str, default = None)
+
     for i in subs[1:]:
         i.add_argument('-i', '--inputfile',
                          help = 'path to a .hic file.', type = str)

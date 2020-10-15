@@ -1,4 +1,3 @@
-README.md
 setup.py
 hicplus/__init__.py
 hicplus/arr2img.py

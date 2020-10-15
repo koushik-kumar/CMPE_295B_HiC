@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #SBATCH --job-name=Hi-C_KD
-#SBATCH --output=Hi-C_test_1gpu_10k.log
+#SBATCH --output=Hi-C_test_1gpu_100e_50k.log
 #
 #SBATCH --time=46:30:00
 #SBATCH --nodes=1   # number of nodes
@@ -26,7 +26,7 @@ python --version
 cd ~/workspace/hicplus
 module load cuda/10.1
 srun hicplus train -i ~/uploads/gm12878_in_situ_paternal.hic -r 16 -c 19 
-#srun hicplus train -i ~/uploads/gm12878_in_situ_paternal.hic -r 16 -c 19 -k /home/007402876/workspace/hicplus/model/2020-10-12/model2800.model
+#srun hicplus train -i ~/uploads/gm12878_in_situ_paternal.hic -r 16 -c 19 -k /home/007402876/workspace/hicplus/model/2020-10-14/model500.model
 # srun hicplus train -i ~/uploads/CP190_HiChIP.hic -r 8 -c 19
 #&> ~/workspace/hicplus/trainingLog1.txt 
 

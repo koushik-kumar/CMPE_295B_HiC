@@ -37,7 +37,7 @@ def main(args):
     #np.save(infile+"lowres",lowres_sub)
 
     logging.debug('start training...')
-    trainConvNet.train(lowres_sub,highres_sub,args.outmodel)
+    trainConvNet.train(lowres_sub,highres_sub,args.outmodel, args.checkpoint)
 
 
     logging.debug('finished...')

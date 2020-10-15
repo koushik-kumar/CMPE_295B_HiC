@@ -1,0 +1,33 @@
+2020-10-13 17:39:31,642 0:00:00.000017
+2020-10-13 17:39:34,854 dividing, filtering and downsampling files...
+2020-10-13 17:39:50,197 (1379920, 1, 40, 40)
+2020-10-13 17:41:34,269 (1379920, 1, 40, 40)
+2020-10-13 17:41:34,303 start training...
+2020-10-13 17:47:33,375 low_resulution_sample.shape:(1379920, 1, 40, 40), Y.shape(1379920, 28, 28)
+2020-10-13 17:48:39,481 TRAINING INFO: 
+-------2695 Epoch: 0 running_loss/i: 2.24647796976666
+-----time:2020-10-13 17:48:39
+2020-10-13 17:48:39,481 Training progress: 0.0 || Epoch: 0, Total Epoch: 3500 || Training Time Elapse: 60.07774305343628
+2020-10-13 17:48:39,481 epoch[0]: Saving Model
+2020-10-13 18:47:32,449 0:00:00.000016
+2020-10-13 18:47:35,463 dividing, filtering and downsampling files...
+2020-10-13 18:47:50,507 (1379920, 1, 40, 40)
+2020-10-13 18:49:43,521 (1379920, 1, 40, 40)
+2020-10-13 18:49:43,549 start training...
+2020-10-13 18:55:21,600 low_resulution_sample.shape:(1379920, 1, 40, 40), Y.shape(1379920, 28, 28)
+2020-10-13 18:56:26,258 TRAINING INFO: 
+-------2695 Epoch: 0 running_loss/i: 3.5910012001465876
+-----time:2020-10-13 18:56:26
+2020-10-13 18:56:26,259 Training progress: 0.0 || Epoch: 0, Total Epoch: 3500 || Training Time Elapse: 59.91410303115845
+2020-10-13 18:56:26,259 epoch[0]: Saving Model
+2020-10-13 19:03:34,949 0:00:00.000018
+2020-10-13 19:03:38,019 dividing, filtering and downsampling files...
+2020-10-13 19:03:52,644 (1379920, 1, 40, 40)
+2020-10-13 19:05:41,578 (1379920, 1, 40, 40)
+2020-10-13 19:05:41,613 start training...
+2020-10-13 19:11:37,632 low_resulution_sample.shape:(1379920, 1, 40, 40), Y.shape(1379920, 28, 28)
+2020-10-13 19:12:42,956 TRAINING INFO: 
+-------2695 Epoch: 0 running_loss/i: 3.6075788168438776
+-----time:2020-10-13 19:12:42
+2020-10-13 19:12:42,956 Training progress: 0.0 || Epoch: 0, Total Epoch: 3500 || Training Time Elapse: 61.82401132583618
+2020-10-13 19:12:42,956 epoch[0]: Saving Model
