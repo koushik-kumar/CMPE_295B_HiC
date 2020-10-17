@@ -89,7 +89,7 @@ def train(lowres,highres, outModel, checkpoint_file):
 
     optimizer = optim.SGD(Net.parameters(), lr = 0.00001)
     _loss = nn.MSELoss()
-    Net.train()
+    #Net.train()
 
     running_loss = 0.0
     running_loss_validate = 0.0
@@ -111,7 +111,7 @@ def train(lowres,highres, outModel, checkpoint_file):
         running_loss = checkpoint['loss']
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
         Net.load_state_dict(checkpoint['model_state_dict'])
-   # Net.train()
+    Net.train()
     trainTimer = time.time()
     for epoch in range(start_epoch, epochs):
         for i, (v1, v2) in enumerate(zip(lowres_loader, hires_loader)):
