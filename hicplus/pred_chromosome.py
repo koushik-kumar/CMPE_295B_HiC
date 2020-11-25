@@ -40,7 +40,11 @@ def prediction(M,N,inmodel):
         # m.load_state_dict(torch.load(inmodel)).cuda()
         m.load_state_dict(torch.load(inmodel)['model_state_dict']).cuda()
     # m.load_state_dict(torch.load(inmodel, map_location=torch.device('cpu')))
-    m.load_state_dict(torch.load(inmodel, map_location=torch.device('cpu'))['model_state_dict'])
+    loaded_model = torch.load(inmodel, map_location=torch.device('cpu')
+    if 'model_state_dict' in loaded_model:
+        m.load_state_dict(torch.load(inmodel, map_location=torch.device('cpu'))['model_state_dict'])
+    else:
+        m.load_state_dict(torch.load(inmodel, map_location=torch.device('cpu')))
     for i, v1 in enumerate(lowres_loader):
         _lowRes, _ = v1
         _lowRes = Variable(_lowRes).float()
