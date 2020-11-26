@@ -26,7 +26,8 @@ use_gpu = 0 #opt.cuda
 
 def prediction(M,N,inmodel):
     low_resolution_samples, index = utils.divide(M)
-
+    # print('M: ',M)
+    # print('M.shape: ', M.shape)
     batch_size = low_resolution_samples.shape[0] #256
 
     lowres_set = data.TensorDataset(torch.from_numpy(low_resolution_samples), torch.from_numpy(np.zeros(low_resolution_samples.shape[0])))
@@ -36,9 +37,9 @@ def prediction(M,N,inmodel):
     hires_loader = lowres_loader
 
     m = model.Net(40, 28)
-    if torch.cuda.is_available():
+    if torch.cuda.is_available() and use_gpu:
         # m.load_state_dict(torch.load(inmodel)).cuda()
-        m.load_state_dict(torch.load(inmodel)['model_state_dict']).cuda()
+        m.load_state_dict(torch.load(inmodel)['model_state_dict'].cuda())
     # m.load_state_dict(torch.load(inmodel, map_location=torch.device('cpu')))
     loaded_model = torch.load(inmodel, map_location=torch.device('cpu'))
     if 'model_state_dict' in loaded_model:
@@ -51,7 +52,7 @@ def prediction(M,N,inmodel):
         if use_gpu:
             _lowRes = _lowRes.cuda()
         y_prediction = m(_lowRes)
-
+# parenthesis
 
 
     y_predict = y_prediction.data.cpu().numpy()
@@ -63,12 +64,14 @@ def prediction(M,N,inmodel):
 
 
     #length = int(chrs_length[chrN-1]/expRes)
-
+    trunc_offset1 = int((40-y_predict.shape[1])/2)
+    trunc_offset2 = int(trunc_offset1 + y_predict.shape[1])
+    # print(trunc_offset1,' ', trunc_offset2)
     prediction_1 = np.zeros((N, N))
-
-
-    #print('predicted sample: ', y_predict.shape, ')  #; index shape is: ', index.shape)
-    #print index
+    # print('initializing np array of: ',(N,N))
+    # print('shape of each element: ',prediction_1[0])
+    # print('predicted sample: ', y_predict.shape, ')  #; index shape is: ', index.shape)
+    # print(index)
     for i in range(0, y_predict.shape[0]):
         #if (int(index[i][1]) != chrN):
         #    continue
@@ -76,8 +79,13 @@ def prediction(M,N,inmodel):
         x = int(index[i][1])
         y = int(index[i][2])
         #print np.count_nonzero(y_predict[i])
-        prediction_1[x+6:x+34, y+6:y+34] = y_predict[i]
-    prediction_2 = prediction_1[6:N-6, 6:N-6]
+        # print(prediction_1.shape, y_predict.shape)
+        # print(prediction_1[x+9:x+31, y+9:y+31].shape, y_predict[i].shape)
+        # print(prediction_1[x+6:x+34, y+6:y+34])
+        # prediction_1[x+6:x+34, y+6:y+34] = y_predict[i]
+        prediction_1[x + trunc_offset1:x + trunc_offset2, y + trunc_offset1:y + trunc_offset2] = y_predict[i]
+    # prediction_2 = prediction_1[6:N-6, 6:N-6]
+    prediction_2 = prediction_1[trunc_offset1:(N - trunc_offset1), trunc_offset1:(N - trunc_offset1)]
     return(prediction_2)
     #np.save( 'test.enhanced.npy', prediction_1)
 
