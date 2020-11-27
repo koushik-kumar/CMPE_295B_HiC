@@ -1,0 +1,18 @@
+no change     /home/007402876/anaconda3/condabin/conda
+no change     /home/007402876/anaconda3/bin/conda
+no change     /home/007402876/anaconda3/bin/conda-env
+no change     /home/007402876/anaconda3/bin/activate
+no change     /home/007402876/anaconda3/bin/deactivate
+no change     /home/007402876/anaconda3/etc/profile.d/conda.sh
+no change     /home/007402876/anaconda3/etc/fish/conf.d/conda.fish
+no change     /home/007402876/anaconda3/shell/condabin/Conda.psm1
+no change     /home/007402876/anaconda3/shell/condabin/conda-hook.ps1
+no change     /home/007402876/anaconda3/lib/python3.7/site-packages/xontrib/conda.xsh
+no change     /home/007402876/anaconda3/etc/profile.d/conda.csh
+no change     /home/007402876/.bashrc
+No action taken.
+Starting Job
+Python 3.6.10 :: Anaconda, Inc.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 29225 ON g5 CANCELLED AT 2020-11-17T12:03:45 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 29225.0 ON g5 CANCELLED AT 2020-11-17T12:03:45 DUE TO TIME LIMIT ***
